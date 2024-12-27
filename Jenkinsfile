@@ -8,17 +8,17 @@ pipeline {
         }
         stage('Build Backend') {
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
         stage('Build Docker Images') {
             steps {
-                sh 'docker-compose build'
+                bat 'docker-compose build'
             }
         }
         stage('Run Docker Containers') {
             steps {
-                sh 'docker-compose up -d'
+                bat 'docker-compose up -d'
             }
         }
     }
@@ -28,3 +28,4 @@ pipeline {
         }
     }
 }
+
